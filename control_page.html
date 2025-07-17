@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acquic Bot X Control</title>
+  <style>
+    body { font-family: Arial; text-align: center; background-color: #eef; }
+    button { padding: 15px 30px; margin: 10px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Smart AI Fish Robot - Acquic Bot X</h1>
+  <button onclick="sendCommand('forward')">Forward</button>
+  <button onclick="sendCommand('backward')">Backward</button><br>
+  <button onclick="sendCommand('left')">Left</button>
+  <button onclick="sendCommand('right')">Right</button><br>
+  <button onclick="sendCommand('stop')">Stop</button>
+
+  <script>
+    function sendCommand(cmd) {
+      fetch('/' + cmd).then(response => response.text()).then(data => console.log(data));
+    }
+  </script>
+</body>
+</html>
